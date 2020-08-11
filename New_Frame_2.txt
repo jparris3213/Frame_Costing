@@ -1,0 +1,7 @@
+Total Hardwood Footage: 7.284722222222223
+Average Plywood Footage: 0.8965154822540221
+The cost of plywood for this frame will be: $29.63
+With a total hardwood price of 5.83
+Total Materials and Labor for this frame: $40.53726262058371
+Costs of Goods Sold: $68.91334645499231
+Your Quote is: $74.43
