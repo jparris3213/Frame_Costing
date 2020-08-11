@@ -86,7 +86,7 @@ if assembly == "KD":
 elif assembly == "Assembled":
     print("How much for Knock up?")
     kup_pay = input()
-    print("How much for Sprint Up? ")
+    print("How much for Spring Up? ")
     sup_pay = input()
 
 machine_room_labor = (total_hdwd_footage * .27) + (footage * .09)
