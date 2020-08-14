@@ -12,6 +12,27 @@ main.geometry("800x600")
 
 #TODO: Declare Functions for various Costing
 
+def ply_data_collect():
+    one_whole = int(qty_1_whole.get())
+    one_partial = int(qty_1_partial.get())
+    one_over = int(qty_1_over.get())
+    five_whole = int(qty_5_whole.get())
+    five_partial = int(qty_5_partial.get())
+    five_over = int(qty_5_over.get())
+    ten_whole = int(qty_10_whole.get())
+    ten_partial = int(qty_10_partial.get())
+    ten_over = int(qty_10_over.get())
+
+    one_yield = ply_yield_func(one_whole,one_partial,one_over,1)
+    five_yield = ply_yield_func(five_whole, five_partial, five_over, 5)
+    ten_yield = ply_yield_func(ten_whole, ten_partial, ten_over, 10)
+
+    average_yield = (one_yield + five_yield + ten_yield) / 3
+
+    footage = (1 / average_yield) * 32
+    ply_yield_label.configure(text = footage)
+    
+
 def ply_yield_func(whole,fraction,direction,qty):
     if direction == 96:
         sheets = whole + (fraction / direction)
@@ -48,7 +69,7 @@ qty_10_partial = tk.Entry()
 qty_10_over = tk.Entry()
 
 ply_yield_label = tk.Label(text = "0")
-ply_yield_button = tk.Button( main, text = "Calc" , command = ply_yield_func)
+ply_yield_button = tk.Button( main, text = "Calc" , command = ply_data_collect)
 
 #TODO: Hardwood Entry Table
 
