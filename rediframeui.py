@@ -10,6 +10,19 @@ main.geometry("800x600")
 
 #TODO: Declare Variables present on page, starting with Plywood
 
+#TODO: Declare Functions for various Costing
+
+def ply_yield_func(whole,fraction,direction,qty):
+    if direction == 96:
+        sheets = whole + (fraction / direction)
+        ply_yield = qty / sheets
+        return ply_yield
+    elif direction == 48:
+        sheets = whole + ((48 - fraction) / direction)
+        ply_yield = qty / sheets
+        return ply_yield
+
+
 #TODO: Admin Area: Number, Name, Customer, Current Price, New Price, MATLAB
 
 #TODO: Plywood Yield Calculator
@@ -23,6 +36,19 @@ qty_1_label = tk.Label(text = "One")
 qty_1_whole = tk.Entry()
 qty_1_partial = tk.Entry()
 qty_1_over = tk.Entry()
+
+qty_5_label = tk.Label(text = "Five")
+qty_5_whole = tk.Entry()
+qty_5_partial = tk.Entry()
+qty_5_over = tk.Entry()
+
+qty_10_label = tk.Label(text = "Ten")
+qty_10_whole = tk.Entry()
+qty_10_partial = tk.Entry()
+qty_10_over = tk.Entry()
+
+ply_yield_label = tk.Label(text = "0")
+ply_yield_button = tk.Button( main, text = "Calc" , command = ply_yield_func)
 
 #TODO: Hardwood Entry Table
 
@@ -43,5 +69,18 @@ qty_1_label.grid(row = 1, column = 0)
 qty_1_whole.grid(row = 1, column = 1)
 qty_1_partial.grid(row = 1, column = 2)
 qty_1_over.grid(row = 1, column =3)
+
+qty_5_label.grid(row = 2, column = 0)
+qty_5_whole.grid(row = 2, column = 1)
+qty_5_partial.grid(row = 2, column = 2)
+qty_5_over.grid(row = 2, column = 3)
+
+qty_10_label.grid(row = 3, column = 0)
+qty_10_whole.grid(row = 3, column = 1)
+qty_10_partial.grid(row = 3, column = 2)
+qty_10_over.grid(row = 3, column = 3)
+
+ply_yield_label.grid(row = 4, column = 2)
+ply_yield_button.grid(row = 4, column = 3)
 
 main.mainloop()
