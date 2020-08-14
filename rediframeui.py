@@ -31,6 +31,8 @@ def ply_data_collect():
 
     footage = (1 / average_yield) * 32
     ply_yield_label.configure(text = footage)
+    ply_price = footage * .83
+    ply_yield_cost.configure(text = ply_price)
     
 
 def ply_yield_func(whole,fraction,direction,qty):
@@ -69,6 +71,7 @@ qty_10_partial = tk.Entry()
 qty_10_over = tk.Entry()
 
 ply_yield_label = tk.Label(text = "0")
+ply_yield_cost = tk.Label(text = "$0.83")
 ply_yield_button = tk.Button( main, text = "Calc" , command = ply_data_collect)
 
 #TODO: Hardwood Entry Table
@@ -101,7 +104,8 @@ qty_10_whole.grid(row = 3, column = 1)
 qty_10_partial.grid(row = 3, column = 2)
 qty_10_over.grid(row = 3, column = 3)
 
-ply_yield_label.grid(row = 4, column = 2)
+ply_yield_label.grid(row = 4, column = 1)
+ply_yield_cost.grid(row = 4, column = 2)
 ply_yield_button.grid(row = 4, column = 3)
 
 main.mainloop()
