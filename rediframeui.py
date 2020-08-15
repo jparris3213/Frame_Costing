@@ -2,15 +2,18 @@ import tkinter as tk
 from tkinter import ttk
 import time
 
-
+#Main Window and Label'ed Frames
 main = tk.Tk()
 
 main.geometry("800x600")
 
+admin_LabelFrame = tk.LabelFrame(text = "Frame Info")
+plywood_calc_LabelFrame = tk.LabelFrame(main, text = "Plywood Nest")
 
-#TODO: Declare Variables present on page, starting with Plywood
 
-#TODO: Declare Functions for various Costing
+#TODO: Declare Functions for various Costing Procedures
+
+#Plywood Calculator Functions
 
 def ply_data_collect():
     one_whole = int(qty_1_whole.get())
@@ -30,9 +33,9 @@ def ply_data_collect():
     average_yield = (one_yield + five_yield + ten_yield) / 3
 
     footage = (1 / average_yield) * 32
-    ply_yield_label.configure(text = footage)
+    ply_yield_label.configure(text = "Footage: " + str(round(footage,2)))
     ply_price = footage * .83
-    ply_yield_cost.configure(text = ply_price)
+    ply_yield_cost.configure(text = "Cost of Ply: $" + str(round(ply_price,2)))
     
 
 def ply_yield_func(whole,fraction,direction,qty):
@@ -46,33 +49,46 @@ def ply_yield_func(whole,fraction,direction,qty):
         return ply_yield
 
 
+
+
 #TODO: Admin Area: Number, Name, Customer, Current Price, New Price, MATLAB
+
+style_number_label = tk.Label(admin_LabelFrame, text = "Style Number")
+style_name_label = tk.Label(admin_LabelFrame, text = "Style Name")
+style_type_label = tk.Label(admin_LabelFrame, text = "Style Type")
+delivery_type_label = tk.Label(admin_LabelFrame, text = "Delivery Method")
+customer_name_label = tk.Label(admin_LabelFrame, text = "Customer")
+style_number_entry = tk.Entry(admin_LabelFrame)
+style_name_entry = tk.Entry(admin_LabelFrame)
+style_type_entry = tk.Entry(admin_LabelFrame)
+delivery_type_entry = tk.Entry(admin_LabelFrame)
+customer_name_entry = tk.Entry(admin_LabelFrame)
 
 #TODO: Plywood Yield Calculator
 
-plywood_header_1 = tk.Label(text = "Qty")
-plywood_header_2 = tk.Label(text = "Whole Sheets")
-plywood_header_3 = tk.Label(text = "Partial Sheets")
-plywood_header_4 = tk.Label(text = "/96 or /48")
+plywood_header_1 = tk.Label(plywood_calc_LabelFrame, text = "Qty")
+plywood_header_2 = tk.Label(plywood_calc_LabelFrame, text = "Whole Sheets")
+plywood_header_3 = tk.Label(plywood_calc_LabelFrame, text = "Partial Sheets")
+plywood_header_4 = tk.Label(plywood_calc_LabelFrame, text = "/96 or /48")
 
-qty_1_label = tk.Label(text = "One")
-qty_1_whole = tk.Entry()
-qty_1_partial = tk.Entry()
-qty_1_over = tk.Entry()
+qty_1_label = tk.Label(plywood_calc_LabelFrame, text = "One")
+qty_1_whole = tk.Entry(plywood_calc_LabelFrame, width = 5)
+qty_1_partial = tk.Entry(plywood_calc_LabelFrame, width = 5)
+qty_1_over = tk.Entry(plywood_calc_LabelFrame, width = 5)
 
-qty_5_label = tk.Label(text = "Five")
-qty_5_whole = tk.Entry()
-qty_5_partial = tk.Entry()
-qty_5_over = tk.Entry()
+qty_5_label = tk.Label(plywood_calc_LabelFrame, text = "Five")
+qty_5_whole = tk.Entry(plywood_calc_LabelFrame, width = 5)
+qty_5_partial = tk.Entry(plywood_calc_LabelFrame, width = 5)
+qty_5_over = tk.Entry(plywood_calc_LabelFrame, width = 5)
 
-qty_10_label = tk.Label(text = "Ten")
-qty_10_whole = tk.Entry()
-qty_10_partial = tk.Entry()
-qty_10_over = tk.Entry()
+qty_10_label = tk.Label(plywood_calc_LabelFrame, text = "Ten")
+qty_10_whole = tk.Entry(plywood_calc_LabelFrame, width = 5)
+qty_10_partial = tk.Entry(plywood_calc_LabelFrame, width = 5)
+qty_10_over = tk.Entry(plywood_calc_LabelFrame, width = 5)
 
-ply_yield_label = tk.Label(text = "0")
-ply_yield_cost = tk.Label(text = "$0.83")
-ply_yield_button = tk.Button( main, text = "Calc" , command = ply_data_collect)
+ply_yield_label = tk.Label(plywood_calc_LabelFrame, text = "Footage: 00.00")
+ply_yield_cost = tk.Label(plywood_calc_LabelFrame, text = "Cost  of Ply: $00.00")
+ply_yield_button = tk.Button(plywood_calc_LabelFrame,  text = "Calc" , command = ply_data_collect)
 
 #TODO: Hardwood Entry Table
 
@@ -84,6 +100,25 @@ ply_yield_button = tk.Button( main, text = "Calc" , command = ply_data_collect)
 
 #TODO: Create layout manager for grid layout in tkinter
 
+#Label Frame Grid
+
+admin_LabelFrame.grid(row = 0, column = 0)
+plywood_calc_LabelFrame.grid(row = 0, column = 1)
+
+
+#Admin Grid Locations (Within admin_LabelFrame)
+style_number_label.grid(row = 0, column = 0)
+style_name_label.grid(row = 1, column = 0)
+style_type_label.grid(row = 2, column = 0)
+delivery_type_label.grid(row = 3, column = 0)
+customer_name_label.grid(row = 4, column = 0)
+
+style_number_entry.grid(row = 0, column = 1)
+style_name_entry.grid(row = 1, column = 1)
+style_type_entry.grid(row = 2, column = 1)
+delivery_type_entry.grid(row = 3, column = 1)
+customer_name_entry.grid(row = 4, column = 1)
+#Plywood Grid Locations (Within plywood_calc_LabelFrame)
 plywood_header_1.grid(row = 0 , column = 0)
 plywood_header_2.grid(row = 0 , column = 1)
 plywood_header_3.grid(row = 0 , column = 2)
