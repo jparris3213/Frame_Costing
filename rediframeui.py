@@ -5,9 +5,10 @@ import time
 #Main Window and Label'ed Frames
 main = tk.Tk()
 
-main.geometry("800x600")
+main.geometry("900x600")
 
 admin_LabelFrame = tk.LabelFrame(text = "Frame Info")
+hardwood_LabelFrame = tk.LabelFrame(text = "Hardwood Info")
 plywood_calc_LabelFrame = tk.LabelFrame(main, text = "Plywood Nest")
 
 
@@ -92,6 +93,21 @@ ply_yield_button = tk.Button(plywood_calc_LabelFrame,  text = "Calc" , command =
 
 #TODO: Hardwood Entry Table
 
+table_headings = [ "Qty", "Part Name", "Length", "Width", "Footage", "With Waste", "Total", "Cost", "First Clip", "Remaining Clips","Edge/Face","Bandsaw?","Qty"]
+
+table_headings_start = 0
+
+for name in table_headings:
+    table_headings = tk.Label(hardwood_LabelFrame, text = name)
+
+    table_headings.grid(row = 0, column = table_headings_start)
+    table_headings_start = table_headings_start + 1
+
+for i in range(5):
+    for n in range(12):
+        table_entry = tk.Entry(hardwood_LabelFrame, width = 10)
+        table_entry.grid(row = i + 1, column = n)
+
 #TODO: Labor Entry
 
 #TODO: Spring Up Information Box
@@ -104,6 +120,7 @@ ply_yield_button = tk.Button(plywood_calc_LabelFrame,  text = "Calc" , command =
 
 admin_LabelFrame.grid(row = 0, column = 0)
 plywood_calc_LabelFrame.grid(row = 0, column = 1)
+hardwood_LabelFrame.grid(row = 1, column = 0, columnspan = 12)
 
 
 #Admin Grid Locations (Within admin_LabelFrame)
@@ -118,6 +135,8 @@ style_name_entry.grid(row = 1, column = 1)
 style_type_entry.grid(row = 2, column = 1)
 delivery_type_entry.grid(row = 3, column = 1)
 customer_name_entry.grid(row = 4, column = 1)
+
+
 #Plywood Grid Locations (Within plywood_calc_LabelFrame)
 plywood_header_1.grid(row = 0 , column = 0)
 plywood_header_2.grid(row = 0 , column = 1)

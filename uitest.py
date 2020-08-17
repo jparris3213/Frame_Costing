@@ -15,4 +15,9 @@ entry.grid(row = 0, column = 2)
 button = tk.Button( window, text="Push Me!", command = display_stuff )
 button.grid(row = 0, column = 3)
 
+for i in range(5):
+    for n in range(5):
+        table_entry = tk.Entry()
+        table_entry.grid(row = i, column = n)
+
 window.mainloop()
