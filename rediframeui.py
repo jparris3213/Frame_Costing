@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import time
+from tkinter import messagebox
 
 #Main Window and Label'ed Frames
 main = tk.Tk()
@@ -11,6 +12,7 @@ admin_LabelFrame = tk.LabelFrame(text = "Frame Info")
 hardwood_LabelFrame = tk.LabelFrame(text = "Hardwood Info")
 plywood_calc_LabelFrame = tk.LabelFrame(main, text = "Plywood Nest")
 
+messagebox.showinfo(title="Redi-Frame Inc. Alpha v 0.1", message="Welcome to Redi Frame Software \n v 0.01 \n by Jacob Parris")
 
 #TODO: Declare Functions for various Costing Procedures
 
