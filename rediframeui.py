@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import time
 from tkinter import messagebox
+from tkinter import *
 
 #Main Window and Label'ed Frames
 main = tk.Tk()
@@ -126,11 +127,11 @@ hardwood_LabelFrame.grid(row = 1, column = 0, columnspan = 12)
 
 
 #Admin Grid Locations (Within admin_LabelFrame)
-style_number_label.grid(row = 0, column = 0)
-style_name_label.grid(row = 1, column = 0)
-style_type_label.grid(row = 2, column = 0)
-delivery_type_label.grid(row = 3, column = 0)
-customer_name_label.grid(row = 4, column = 0)
+style_number_label.grid(sticky=E,row = 0, column = 0)
+style_name_label.grid(sticky=E,row = 1, column = 0)
+style_type_label.grid(sticky=E,row = 2, column = 0)
+delivery_type_label.grid(sticky=E,row = 3, column = 0)
+customer_name_label.grid(sticky=E,row = 4, column = 0)
 
 style_number_entry.grid(row = 0, column = 1)
 style_name_entry.grid(row = 1, column = 1)
