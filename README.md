@@ -3,7 +3,7 @@
 # Frame Costing - Python App
 
 ## Description
-  An evolution of my original Excel File created for Furniture Frame Pricing, this CLI program is more an excercise in basic Python programming than anything
+  An evolution of my original Excel File created for Furniture Frame Pricing, this CLI program is more an exercise in basic Python programming than anything
   
 ## Table of Contents
 
@@ -22,7 +22,7 @@
 
 ### Video of Usage:
 
-[Video of application](not yet)
+[Video of application](https://youtu.be/2KKf0AujyMo)
 
    Once installed and started with the 'python frame_costing.py' command, follow on screen (CLI) instructions, using measurements and information gathered from physical Furniture Frame
 
